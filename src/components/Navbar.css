@@ -1,0 +1,117 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #111; /* Dark background */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.navbar-logo .logo-link {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for links */
+.navbar-link:hover {
+  color: #00c8ff; /* Glowing blue effect on hover */
+  text-shadow: 0 0 5px #00c8ff, 0 0 10px #00c8ff;
+  transform: scale(1.1);
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: #00c8ff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 30px;
+}
+
+.cta-button:hover {
+  background-color: #009bb2;
+}
+
+/* Mobile Hamburger Menu */
+.navbar-hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.navbar-hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Active state for the navbar links */
+.navbar.active .navbar-links {
+  display: block;
+}
+
+.navbar-links.active {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #111;
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+  }
+}
