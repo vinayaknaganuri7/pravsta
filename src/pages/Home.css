@@ -102,8 +102,6 @@
   transform: scale(1.05);
   box-shadow: 0 6px 30px rgba(0, 188, 212, 0.3);
 }
-
-/* Value Proposition Section */
 .value-proposition-section {
   padding: 4rem 2rem;
   text-align: center;
@@ -112,25 +110,29 @@
   margin: 0 auto;
 }
 
-/* 4-Column Grid */
 .value-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between; /* Better alignment */
+  align-items: stretch;           /* Align card heights */
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .value-col {
-  flex: 1 1 22%;
+  flex: 1 1 calc(25% - 2rem);
   min-width: 250px;
   max-width: 280px;
   background-color: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 188, 212, 0.1);
+  padding: 1.8rem 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 0 16px rgba(0, 188, 212, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .value-col:hover {
@@ -141,26 +143,28 @@
 .value-col h3 {
   font-size: 1.3rem;
   color: #00bcd4;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-align: left;
 }
 
 .value-col p {
   font-size: 1rem;
   color: #ddd;
   line-height: 1.6;
-  text-align: justify;
+  text-align: left; /* More professional than justify in cards */
+  margin-top: 0.5rem;
 }
 
-/* Responsive Stack */
+/* Responsive */
 @media screen and (max-width: 992px) {
   .value-col {
-    flex: 1 1 45%;
+    flex: 1 1 calc(50% - 1.5rem);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .value-col {
     flex: 1 1 100%;
     max-width: 100%;
@@ -169,5 +173,10 @@
   .value-row {
     flex-direction: column;
     align-items: center;
+  }
+
+  .value-col h3,
+  .value-col p {
+    text-align: center;
   }
 }

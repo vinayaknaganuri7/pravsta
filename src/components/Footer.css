@@ -1,0 +1,97 @@
+.footer {
+  background-color: #0b0b1d;
+  color: #ccc;
+  padding: 3rem 1.5rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -5px 20px rgba(0, 188, 212, 0.05);
+}
+
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h4 {
+  font-size: 1.2rem;
+  color: #00bcd4;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  color: #00bcd4;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+
+.footer-icons svg {
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons svg:hover {
+  color: #00bcd4;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-note {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-grid {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-col {
+    max-width: 100%;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+}

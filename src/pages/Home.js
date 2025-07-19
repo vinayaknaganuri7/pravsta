@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer'; // ✅ Footer added
 import './Home.css';
 import introImage from '../components/pages/images/Intr.jpg';
 import visionImage from '../components/pages/images/car.jpg';
@@ -81,6 +82,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* ✅ Footer Section */}
+      <Footer />
     </div>
   );
 };
