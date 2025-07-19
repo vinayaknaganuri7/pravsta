@@ -5,19 +5,20 @@
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Section wrapper */
 .home-section {
   padding: 4rem 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
+/* Intro Section Layout */
 .intro-row {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   max-width: 1200px;
 }
@@ -32,6 +33,7 @@
   }
 }
 
+/* Text Card */
 .intro-text {
   flex: 1;
   text-align: left;
@@ -47,6 +49,7 @@
   box-shadow: 0 0 35px rgba(0, 188, 212, 0.15);
 }
 
+/* Header */
 .home-header {
   font-size: 2.5rem;
   font-weight: 700;
@@ -67,6 +70,11 @@
   border-radius: 2px;
 }
 
+.center-text {
+  text-align: center;
+}
+
+/* Paragraphs */
 .home-description {
   font-size: 1.05rem;
   color: #ccc;
@@ -74,6 +82,7 @@
   margin-top: 1rem;
 }
 
+/* Image Section */
 .intro-image-wrapper {
   flex: 1;
   display: flex;
@@ -92,4 +101,73 @@
 .intro-sub-image:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 30px rgba(0, 188, 212, 0.3);
+}
+
+/* Value Proposition Section */
+.value-proposition-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 4-Column Grid */
+.value-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-col {
+  flex: 1 1 22%;
+  min-width: 250px;
+  max-width: 280px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 188, 212, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.value-col:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.25);
+}
+
+.value-col h3 {
+  font-size: 1.3rem;
+  color: #00bcd4;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value-col p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Responsive Stack */
+@media screen and (max-width: 992px) {
+  .value-col {
+    flex: 1 1 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .value-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .value-row {
+    flex-direction: column;
+    align-items: center;
+  }
 }

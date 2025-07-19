@@ -1,4 +1,3 @@
-// src/pages/Home.js
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -47,6 +46,38 @@ const Home = () => {
           </div>
           <div className="intro-image-wrapper">
             <img src={visionImage} alt="Vision" className="intro-sub-image" />
+          </div>
+        </div>
+      </section>
+
+      {/* Our Value Proposition Section */}
+      <section className="home-section fade-in value-proposition-section">
+        <h2 className="home-header center-text">Our Value Proposition</h2>
+
+        <div className="value-row">
+          <div className="value-col">
+            <h3>Innovation Programs</h3>
+            <p>
+              We support and invest in key areas with offerings, ecosystems, and expertise—developing proof of concepts and joint innovation ideas.
+            </p>
+          </div>
+          <div className="value-col">
+            <h3>Work Package</h3>
+            <p>
+              We take full ownership of projects in a <strong>work package</strong> mode with defined <strong>KPIs</strong> and <strong>SLAs</strong> to ensure high performance.
+            </p>
+          </div>
+          <div className="value-col">
+            <h3>Managed Services</h3>
+            <p>
+              We deliver scalable solutions under a <strong>managed service model</strong>, typically on a <strong>Time and Material</strong> basis.
+            </p>
+          </div>
+          <div className="value-col">
+            <h3>Resource Augmentation</h3>
+            <p>
+              We provide experienced engineers or hire-train-deploy talent based on a flexible <strong>rate card</strong> model tailored to your needs.
+            </p>
           </div>
         </div>
       </section>
