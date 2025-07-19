@@ -9,13 +9,14 @@ const Hero = () => {
 
       {/* Hero content */}
       <div className="hero-content">
-        <h1>
-          Transform your ideas<br />
-          into <span className="highlight">digital success</span><br />
-          with us!
+            <h1>
+          Committed to<br />
+          <span className="highlight">Exceptional Embedded Solutions</span><br />
+          for IT, Automotive Innovation,<br />
+          & Data Science
         </h1>
         <p>
-          Your partner in Automotive, IT, and Data Science solutions.
+          Your trusted partner in driving digital transformation through cutting-edge technologies.
         </p>
         <div className="hero-buttons">
           <button className="btn-primary" aria-label="Learn more about our services">

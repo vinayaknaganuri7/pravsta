@@ -21,10 +21,36 @@
 }
 
 .navbar-logo {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: white;
+  font-family: 'Courier New', Courier, monospace;
 }
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.company-name {
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
 
 .navbar-logo .logo-link {
   color: white;
