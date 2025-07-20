@@ -9,36 +9,39 @@ const Footer = () => {
         <div className="footer-col">
           <h4>About PRAVSTA</h4>
           <ul>
-            <li>Our Story</li>
-            <li>Vision & Mission</li>
-            <li>Leadership</li>
-            <li>Careers</li>
+            <li><a href="/About">Our Story</a></li>
+            <li><a href="/About">Vision & Mission</a></li>
+            <li><a href="/About">Leadership</a></li>
+            <li><a href="/About">Careers</a></li>
           </ul>
         </div>
+
         <div className="footer-col">
           <h4>Solutions</h4>
           <ul>
-            <li>Automotive</li>
-            <li>Embedded Systems</li>
-            <li>IT & Cloud</li>
-            <li>AI & Data Science</li>
+            <li><a href="#automotive">Automotive</a></li>
+            <li><a href="#embedded-systems">Embedded Systems</a></li>
+            <li><a href="#it-cloud">IT & Cloud</a></li>
+            <li><a href="#ai-data">AI & Data Science</a></li>
           </ul>
         </div>
+
         <div className="footer-col">
           <h4>Quick Links</h4>
           <ul>
-            <li>Contact Us</li>
-            <li>Terms of Service</li>
-            <li>Privacy Policy</li>
-            <li>Support</li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/support">Support</a></li>
           </ul>
         </div>
+
         <div className="footer-col">
           <h4>Follow Us</h4>
           <div className="footer-icons">
-            <FaFacebook />
-            <FaInstagram />
-            <FaLinkedin />
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/company/pravsta" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
           </div>
         </div>
       </div>
