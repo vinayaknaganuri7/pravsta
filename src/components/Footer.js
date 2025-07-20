@@ -44,6 +44,13 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/pravsta" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
           </div>
         </div>
+
+        <div className="footer-col address-col">
+          <h4>📍 Address</h4>
+          <p>
+            4th Floor, Balaji Business Center, Pune-Mumbai Highway (NH 4), Next to Hotel Spice Court, Baner, Pune, MH 411045
+          </p>
+        </div>
       </div>
 
       <div className="footer-bottom">

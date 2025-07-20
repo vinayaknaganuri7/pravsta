@@ -1,26 +1,29 @@
 .footer {
   background-color: #0b0b1d;
-  color: #ffffff;
+  color: white;
   padding: 40px 20px 20px;
   font-family: 'Segoe UI', sans-serif;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
-  margin-bottom: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 20px;
 }
 
 .footer-col h4 {
-  font-size: 1.1rem;
   margin-bottom: 15px;
-  color: #00bfff;
+  color: #00eaff;
+  font-size: 1rem;
 }
 
 .footer-col ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-col ul li {
@@ -30,33 +33,35 @@
 .footer-col ul li a {
   color: #ccc;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .footer-col ul li a:hover {
-  color: #ffffff;
+  color: #00eaff;
 }
 
 .footer-icons a {
-  color: #ccc;
-  font-size: 1.3rem;
   margin-right: 12px;
-  transition: color 0.3s ease;
+  color: white;
+  font-size: 1.2rem;
 }
 
-.footer-icons a:hover {
-  color: #ffffff;
+.address-col p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ccc;
+  text-align: left;
 }
 
 .footer-bottom {
-  border-top: 1px solid #333;
-  padding-top: 20px;
-  font-size: 0.9rem;
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #999;
 }
 
 .footer-note {
   margin-top: 5px;
-  font-size: 0.8rem;
-  color: #888;
+  font-size: 0.75rem;
 }
