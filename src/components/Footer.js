@@ -48,7 +48,13 @@ const Footer = () => {
         <div className="footer-col address-col">
           <h4>📍 Address</h4>
           <p>
-            4th Floor, Balaji Business Center, Pune-Mumbai Highway (NH 4), Next to Hotel Spice Court, Baner, Pune, MH 411045
+             <p><strong>PRAVSTA TECHNOLOGY PRIVATE LIMITED</strong></p>
+                <p>
+                  4<sup>th</sup> Floor, Balaji Business Center,<br />
+                  Pune-Mumbai Highway (NH 4),<br />
+                  Next to Hotel Spice Court, Baner,<br />
+                  Pune, Maharashtra – 411045
+                </p>
           </p>
         </div>
       </div>
