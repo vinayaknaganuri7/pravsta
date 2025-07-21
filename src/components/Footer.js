@@ -9,10 +9,10 @@ const Footer = () => {
         <div className="footer-col">
           <h4>About PRAVSTA</h4>
           <ul>
-            <li><a href="/About">Our Story</a></li>
-            <li><a href="/About">Vision & Mission</a></li>
-            <li><a href="/About">Leadership</a></li>
-            <li><a href="/About">Careers</a></li>
+            <li><a href="/about">Our Story</a></li>
+            <li><a href="/about">Vision & Mission</a></li>
+            <li><a href="/about">Leadership</a></li>
+            <li><a href="/about">Careers</a></li>
           </ul>
         </div>
 
