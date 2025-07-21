@@ -40,10 +40,10 @@ const Navbar = () => {
           </span>
           {isServicesOpen && (
             <ul className="dropdown-menu">
-              <li><Link to="/services/automotive">Automotive</Link></li>
-              <li><Link to="/services/ai-data">AI & Data</Link></li>
+              <li><Link to="/services/automotive">Automotive Services</Link></li>
+              <li><Link to="/services/ai-data">AI & Data Services</Link></li>
               <li><Link to="/services/sap">SAP Services</Link></li>
-              <li><Link to="/services/web-mobile">Web & Mobile</Link></li>
+              <li><Link to="/services/web-mobile">Web & Mobile Development Services</Link></li>
             </ul>
           )}
         </li>

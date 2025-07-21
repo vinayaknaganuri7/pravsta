@@ -1,8 +1,8 @@
 .footer {
-  background-color: #0b0b1d;
-  color: white;
+  background-color: #1e1e20; /* Dark UI Base */
+  color: #FFFFFF; /* Pure White */
   padding: 40px 20px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif; /* Body font */
 }
 
 .footer-grid {
@@ -16,8 +16,9 @@
 
 .footer-col h4 {
   margin-bottom: 15px;
-  color: #00eaff;
-  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif; /* Heading font */
+  color: #07BFFF; /* Tech Blue */
+  font-size: 1.05rem;
 }
 
 .footer-col ul {
@@ -31,25 +32,31 @@
 }
 
 .footer-col ul li a {
-  color: #ccc;
+  color: #D1D1D1; /* Light Text */
   text-decoration: none;
   font-size: 0.95rem;
+  transition: color 0.3s ease;
 }
 
 .footer-col ul li a:hover {
-  color: #00eaff;
+  color: #0FFFB2; /* Electric Green */
 }
 
 .footer-icons a {
   margin-right: 12px;
-  color: white;
+  color: #FFFFFF;
   font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #0FFFB2;
 }
 
 .address-col p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #ccc;
+  color: #D1D1D1; /* Light Text */
   text-align: left;
 }
 
@@ -58,10 +65,11 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
   font-size: 0.85rem;
-  color: #999;
+  color: #999999;
 }
 
 .footer-note {
   margin-top: 5px;
   font-size: 0.75rem;
+  color: #D1D1D1;
 }

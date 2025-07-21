@@ -8,6 +8,12 @@ const AboutContent = () => {
     <>
       <Hero title="About PRAVSTA" subtitle="Engineering the Future of Technology" />
 
+      {/* About Page Header */}
+      <div className="about-header">
+        <h1>About PRAVSTA TECHNOLOGY PRIVATE LIMITED</h1>
+        <p>Discover our journey, vision, leadership, and the people powering innovation.</p>
+      </div>
+
       <div className="about-wrapper">
         <div className="about-grid">
 

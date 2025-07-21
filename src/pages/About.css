@@ -1,42 +1,92 @@
+:root {
+  /* === Core Brand Colors === */
+  --color-primary:      #07BFFF;
+  --color-accent:       #0FFFB2;
+
+  /* === UI Base Colors === */
+  --color-dark-ui:      #1C1C1E;
+  --color-secondary:    #2F2F35;
+  --color-light-text:   #D1D1D1;
+  --color-white:        #FFFFFF;
+
+  /* === Glass / Glow === */
+  --color-shadow-glow:  rgba(7, 191, 255, 0.25);
+  --color-glass-bg:     rgba(255, 255, 255, 0.04);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Apply fonts globally if needed */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1C1C1E;
+  color: var(--color-white);
+  margin: 0;
+  padding: 0;
+}
+
+/* About section styling */
 .about-wrapper {
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  color: #fff;
+  background-color: var(--color-dark-ui);
   padding: 60px 20px 100px;
-  font-family: 'Segoe UI', sans-serif;
+}
+
+.about-header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-header p {
+  font-size: 1.1rem;
+  color: var(--color-light-text);
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .about-card {
-  background: rgba(255, 255, 255, 0.05);
+  background-color: var(--color-glass-bg);
+  border: 1px solid var(--color-glass-border);
   border-radius: 20px;
   padding: 30px;
   backdrop-filter: blur(12px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 30px var(--color-shadow-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 40px var(--color-shadow-glow);
 }
 
 .about-card h2 {
-  color: #00eaff;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-primary);
   margin-bottom: 20px;
   font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .about-card p,
 .about-card li {
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   line-height: 1.7;
-  color: #e6e6e6;
+  color: var(--color-light-text);
   text-align: justify;
   text-justify: inter-word;
   margin-bottom: 10px;
@@ -48,7 +98,6 @@
   padding-left: 0;
 }
 
-/* Mobile responsive fallback */
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
