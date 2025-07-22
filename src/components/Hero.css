@@ -1,10 +1,10 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  width: 100%;
+  width: 100vw; /* Full viewport width */
   height: 100vh;
-  padding: 2rem;
-  background-image: url('./pages/images/background.jpg'); /* Update path as needed */
+  padding: 2rem 1rem; /* reduced side padding for mobile */
+  background-image: url('./pages/images/background.jpg'); /* Confirm correct path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,12 +13,16 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Overlay */
 .overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 0;
@@ -31,6 +35,7 @@
   max-width: 900px;
   color: var(--color-white);
   animation: fadeInUp 1.2s ease forwards;
+  padding: 0 1rem;
 }
 
 /* Headline */
@@ -106,8 +111,13 @@
 
 /* Responsive Typography */
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 1.5rem 1rem;
+    width: 110vw; /* Use viewport width, not fixed px */
+  }
+
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .hero-content p {

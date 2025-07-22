@@ -2,7 +2,7 @@
   background-color: #1C1C1E; /* Dark UI background */
   color: var(--color-white);
   min-height: 100vh;
-  font-family: 'Inter', sans-serif; /* Body font */
+  font-family: 'Inter', sans-serif;
 }
 
 /* Section Wrapper */
@@ -38,7 +38,7 @@
   flex: 1;
   text-align: left;
   padding: 2rem;
-  background-color: var(--color-glass-bg); /* Frosted effect */
+  background-color: var(--color-glass-bg);
   border: 1px solid var(--color-glass-border);
   border-radius: 16px;
   box-shadow: 0 0 25px var(--color-shadow-glow);
@@ -46,13 +46,13 @@
 }
 
 .intro-text:hover {
-  box-shadow: 0 0 35px rgba(15, 255, 178, 0.15); /* Accent glow */
+  box-shadow: 0 0 35px rgba(15, 255, 178, 0.15);
 }
 
 /* Header */
 .home-header {
   font-size: 2.5rem;
-  font-family: 'Montserrat', sans-serif; /* Heading font */
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
@@ -66,7 +66,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background-color: var(--color-primary); /* Tech Blue */
+  background-color: var(--color-primary);
   margin: 0.5rem auto 0;
   border-radius: 2px;
 }
@@ -78,7 +78,7 @@
 /* Paragraphs */
 .home-description {
   font-size: 1.05rem;
-  color: var(--color-light-text); /* Light text */
+  color: var(--color-light-text);
   line-height: 1.6;
   margin-top: 1rem;
 }
@@ -89,14 +89,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  max-width: 100%;
 }
 
 .intro-sub-image {
-  width: 350px;
+  width: 100%;
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  object-fit: contain;
 }
 
 .intro-sub-image:hover {
@@ -166,6 +170,20 @@
 @media screen and (max-width: 992px) {
   .value-col {
     flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro-sub-image {
+    max-width: 90vw;
+  }
+
+  .intro-row {
+    flex-direction: column;
+  }
+
+  .intro-text {
+    margin-top: 2rem;
   }
 }
 
