@@ -73,3 +73,44 @@
   font-size: 0.75rem;
   color: #D1D1D1;
 }
+
+
+
+/* === MOBILE STYLES TO MATCH NAVBAR === */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 16px 15px;
+    width: 500px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-col h4 {
+    font-size: 1rem;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.9rem;
+  }
+
+  .footer-icons a {
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+
+  .address-col p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+
+  .footer-note {
+    font-size: 0.7rem;
+  }
+}
