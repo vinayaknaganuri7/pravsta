@@ -7,7 +7,8 @@
 
 .navbar {
   width: 100%;
-  background-color: #0f0f13;
+  height: 60px;
+  background-color: #1e1e20;
   color: white;
   display: flex;
   align-items: center;
@@ -94,7 +95,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #1a1a1a;
+  background-color: #1e1e20;
   list-style: none;
   padding: 10px 0;
   border-radius: 4px;
@@ -133,55 +134,68 @@
   border-radius: 2px;
 }
 
-/* Responsive */
+/* === MOBILE STYLES === */
 @media (max-width: 768px) {
   .navbar {
-    flex-wrap: wrap;
+    flex-direction: column;
     padding: 0;
+    background-color: #0f0f13;
   }
 
   .navbar-left {
-    padding: 10px;
     width: 100%;
-    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo+Name on left, Hamburger on right */
+    padding: 10px 16px;
+    border-bottom: 1px solid #222;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
   }
 
   .company-name {
     font-size: 0.9rem;
-    max-width: 180px;
+    font-weight: 600;
+    white-space: nowrap;
   }
 
-  .navbar-right {
-    width: 100%;
+  /* ✅ Now hamburger shows up on mobile and stays inline */
+  .navbar-hamburger {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 22px;
+    height: 2px;
+    background-color: white;
+    border-radius: 1px;
+    transition: all 0.3s ease;
   }
 
   .navbar-links {
+    display: none;
     flex-direction: column;
     width: 100%;
-    display: none;
-    padding-left: 10px;
-    padding-bottom: 10px;
+    background-color: #13131a;
+    padding: 10px 16px;
+    gap: 12px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   }
 
   .navbar-links.active {
     display: flex;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background-color: transparent;
-    padding-left: 15px;
-  }
-
-  .dropdown-menu li {
-    padding: 6px 0;
-  }
-
-  .navbar-hamburger {
-    display: flex;
-    margin-right: 10px;
   }
 }

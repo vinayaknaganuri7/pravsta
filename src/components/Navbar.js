@@ -43,13 +43,19 @@ const Navbar = () => {
           <img src={logo} alt="Logo" className="logo-image" />
           <span className="company-name">PRAVSTA TECHNOLOGY PRIVATE LIMITED</span>
         </Link>
+
+        {/* ✅ Hamburger inside navbar-left */}
+        <div className="navbar-hamburger" onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
       </div>
 
       <div className="navbar-right">
         <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           <li><Link to="/" className="navbar-link" onClick={handleLinkClick}>Home</Link></li>
           <li><Link to="/about" className="navbar-link" onClick={handleLinkClick}>About Us</Link></li>
-
           <li
             className="dropdown"
             onMouseEnter={() => window.innerWidth > 768 && setIsServicesOpen(true)}
@@ -67,16 +73,9 @@ const Navbar = () => {
               </ul>
             )}
           </li>
-
           <li><Link to="/contact" className="navbar-link" onClick={handleLinkClick}>Contact</Link></li>
           <li><button className="cta-button" onClick={handleLinkClick}>Get in Touch</button></li>
         </ul>
-
-        <div className="navbar-hamburger" onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
       </div>
     </nav>
   );
