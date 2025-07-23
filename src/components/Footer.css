@@ -1,5 +1,8 @@
+/* ====================
+   ✅ BASE STYLES
+==================== */
 .footer {
-  background-color: #1e1e20;
+  background-color: #1e1e20; /* Dark UI Base */
   color: #FFFFFF;
   padding: 40px 20px 20px;
   font-family: 'Inter', sans-serif;
@@ -75,6 +78,7 @@
   color: #D1D1D1;
 }
 
+
 /* ====================
    ✅ MOBILE (≤768px)
 ==================== */
@@ -121,6 +125,31 @@
   .footer-bottom,
   .footer-note {
     text-align: center;
+  }
+}
+
+/* ====================
+   ✅ EXTRA SMALL MOBILE (≤360px)
+==================== */
+@media (max-width: 360px) {
+  .footer {
+    padding: 24px 12px 12px;
+  }
+
+  .footer-col {
+    min-width: 160px;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.85rem;
+  }
+
+  .address-col p {
+    font-size: 0.8rem;
+  }
+
+  .footer-note {
+    font-size: 0.68rem;
   }
 }
 
