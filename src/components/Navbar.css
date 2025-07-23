@@ -197,5 +197,6 @@
 
   .navbar-links.active {
     display: flex;
+    position: absolute;
   }
 }
