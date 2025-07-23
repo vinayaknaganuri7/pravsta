@@ -74,22 +74,33 @@
   color: #D1D1D1;
 }
 
-
-
 /* === MOBILE STYLES TO MATCH NAVBAR === */
 @media (max-width: 768px) {
   .footer {
     padding: 30px 16px 15px;
-    width: 500px;
+    width: 550px; /* ✅ Use full screen width */
+    overflow-x: auto; /* ✅ In case content is wider than screen */
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    display: flex; /* ✅ Use flex layout instead of grid */
+    flex-direction: row; /* ✅ Single horizontal row */
+    flex-wrap: nowrap;
+    gap: 32px; /* spacing between columns */
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: auto; /* ✅ Scrollable on small screens */
+    padding-bottom: 20px;
+  }
+
+  .footer-col {
+    min-width: 150px; /* ✅ Ensure consistent width */
+    flex-shrink: 0;
   }
 
   .footer-col h4 {
     font-size: 1rem;
+    margin-bottom: 10px;
   }
 
   .footer-col ul li a {
@@ -108,9 +119,67 @@
 
   .footer-bottom {
     font-size: 0.8rem;
+    text-align: center;
+    margin-top: 20px;
   }
 
   .footer-note {
     font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Tablet styles */
+  .footer {
+    padding: 30px 16px 15px;
+    width: auto; /* ✅ Use full screen width */
+    overflow-x: auto; /* ✅ In case content is wider than screen */
+  }
+
+  .footer-grid {
+    display: flex; /* ✅ Use flex layout instead of grid */
+    flex-direction: row; /* ✅ Single horizontal row */
+    flex-wrap: nowrap;
+    gap: 32px; /* spacing between columns */
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: auto; /* ✅ Scrollable on small screens */
+    padding-bottom: 20px;
+  }
+
+  .footer-col {
+    min-width: 150px; /* ✅ Ensure consistent width */
+    flex-shrink: 0;
+  }
+
+  .footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.9rem;
+  }
+
+  .footer-icons a {
+    font-size: 1.1rem;
+    margin-right: 10px;
+  }
+
+  .address-col p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .footer-note {
+    font-size: 0.7rem;
+    text-align: center;
   }
 }
