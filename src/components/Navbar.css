@@ -1,24 +1,41 @@
-/* === RESET & BASE === */
+/* === Root Variables === */
+:root {
+  --color-primary: #07BFFF;
+  --color-accent: #0FFFB2;
+  --color-dark-ui: #1C1C1E;
+  --color-secondary: #2F2F35;
+  --color-light-text: #D1D1D1;
+  --color-white: #FFFFFF;
+  --color-shadow-glow: rgba(7, 191, 255, 0.25);
+  --color-glass-bg: rgba(255, 255, 255, 0.04);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* === Fonts (Load in index.html) ===
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+*/
+
+/* === Reset & Base === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  max-width: 100%;
+body, html {
+  width: 100vw;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth;
+  background-color: var(--color-dark-ui);
+  color: var(--color-white);
 }
 
-/* === NAVBAR BASE === */
+/* === Navbar === */
 .navbar {
   width: 100%;
   height: 60px;
-  background-color: #1e1e20;
-  color: white;
+  background-color: var(--color-dark-ui);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +56,7 @@ html, body {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
 }
 
 .logo-image {
@@ -48,54 +65,83 @@ html, body {
 }
 
 .company-name {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  white-space: nowrap;
+  color: var(--color-white);
+  white-space: normal;
+  max-width: 100%;
+  line-height: 1.2;
+  margin-left: 8px;
+  text-align: left;
 }
 
-.navbar-right {
-  display: flex;
+
+.menu-button-wrapper {
+  display: none;
   align-items: center;
-  gap: 20px;
+  gap: 6px;
+  cursor: pointer;
 }
 
-/* === NAV LINKS === */
+.menu-text {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
 .navbar-links {
   display: flex;
   list-style: none;
   gap: 15px;
-  align-items: center;
+  padding-right: 10px;
 }
 
 .navbar-link {
+  margin-right: 15px;
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
   font-size: 1rem;
-  transition: color 0.3s;
+  font-family: 'Inter', sans-serif;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .navbar-link:hover {
-  color: #00ccff;
+  color: var(--color-primary);
 }
 
-/* === CTA BUTTON === */
 .cta-button {
-  background-color: #00ccff;
+  background-color: var(--color-primary);
   border: none;
-  color: white;
+  color: var(--color-white);
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s;
+  font-family: 'Inter', sans-serif;
 }
 
 .cta-button:hover {
   background-color: #009ecc;
 }
 
-/* === DROPDOWN === */
+/* === Dropdown === */
 .dropdown {
   position: relative;
 }
@@ -104,7 +150,7 @@ html, body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #1e1e20;
+  background-color: var(--color-dark-ui);
   list-style: none;
   padding: 10px 0;
   border-radius: 4px;
@@ -118,9 +164,10 @@ html, body {
 }
 
 .dropdown-menu li a {
-  color: white;
+  color: var(--color-white);
   text-decoration: none;
   display: block;
+  font-family: 'Inter', sans-serif;
 }
 
 .dropdown-menu li a:hover {
@@ -128,155 +175,90 @@ html, body {
   border-radius: 3px;
 }
 
-/* === HAMBURGER === */
-.navbar-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-  transition: 0.3s ease;
-}
-
-/* === MINI MOBILE (200px–319px) === */
-@media (max-width: 319px) {
+/* === Responsive: Mobile === */
+@media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    height: auto;
+    align-items: flex-start;
     padding: 0;
   }
+
   .navbar-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 8px 12px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--color-secondary);
   }
-  .company-name {
-    font-size: 0.85rem;
+
+  .menu-button-wrapper {
+    display: flex;
   }
-  .logo-image {
-    height: 30px;
+
+  .navbar-hamburger {
+    display: flex;
   }
+
   .navbar-links {
     display: none;
     flex-direction: column;
     width: 100%;
-    padding: 8px 12px;
-    gap: 10px;
-    background-color: #13131a;
+    background-color: var(--color-secondary);
+    padding: 12px 16px;
+    gap: 12px;
   }
+
   .navbar-links.active {
     display: flex;
   }
+
   .navbar-link {
-    font-size: 0.85rem;
+    text-align: left;
+    width: 100%;
     padding: 8px 0;
   }
-  .cta-button {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
+
   .dropdown-menu {
     position: static;
     box-shadow: none;
-    border-radius: 0;
-    padding: 0;
-    min-width: 100%;
-  }
-  .navbar-hamburger {
-    display: flex;
-  }
-}
-
-/* === SMALL MOBILE (320px–480px) === */
-@media (min-width: 320px) and (max-width: 480px) {
-  .navbar-hamburger {
-    display: flex;
-  }
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .navbar-left {
-    width: 100%;
-    justify-content: space-between;
-    padding: 10px 16px;
-    border-bottom: 1px solid #333;
-    background-color: #0f0f13;
-  }
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    padding: 12px 16px;
-    gap: 12px;
-    background-color: #13131a;
-  }
-  .navbar-links.active {
-    display: flex;
-  }
-}
-
-/* === REGULAR MOBILE (481px–768px) === */
-@media (min-width: 481px) and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
     padding: 0;
   }
-  .navbar-left {
-    width: 100%;
-    justify-content: space-between;
-    padding: 10px 16px;
-    background-color: #0f0f13;
+}
+
+/* === Company Name Scaling === */
+@media (max-width: 768px) {
+  .company-name {
+    font-size: 0.9rem;
+    /* max-width: 120px; */
   }
-  .navbar-links {
+}
+@media (max-width: 480px) {
+  .company-name {
+    font-size: 0.8rem;
+    /* max-width: 100px; */
+  }
+}
+@media (max-width: 280px) {
+  .company-name {
     display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #13131a;
-    padding: 12px 16px;
-    gap: 12px;
-  }
-  .navbar-links.active {
-    display: flex;
-  }
-  .navbar-hamburger {
-    display: flex;
   }
 }
 
-/* === TABLET (769px–1024px) === */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .navbar {
-    padding: 0 24px;
-  }
-  .navbar-left,
-  .navbar-right {
-    gap: 12px;
-  }
-  .navbar-link {
-    font-size: 0.95rem;
-  }
-  .dropdown-menu {
-    min-width: 200px;
-  }
+
+
+.email-contact {
+  margin-top: 12px;
+  color: #D1D1D1;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
 }
 
-/* === DESKTOP (1025px and up) === */
-@media (min-width: 1025px) {
-  .navbar {
-    padding: 0 48px;
-  }
-  .navbar-link {
-    font-size: 1rem;
-  }
-  .cta-button {
-    padding: 10px 20px;
-  }
+.email-contact a {
+  color: #D1D1D1;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.email-contact a:hover {
+  color: #0FFFB2;
 }

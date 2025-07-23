@@ -1,36 +1,37 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
 import logo from './pages/images/logo.png';
+import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const navRef = useRef(null);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const navRef = useRef(); // reference to the entire nav
 
-  const toggleServicesMobile = () => {
-    if (window.innerWidth <= 768) {
-      setIsServicesOpen(!isServicesOpen);
-    }
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsServicesOpen(false);
   };
 
-  const handleLinkClick = () => {
+  const toggleServices = () => {
+    setIsServicesOpen(prev => !prev);
+  };
+
+  const closeMenus = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
   };
 
-  // Close menu when clicking outside
+  // 🔒 Auto close menus if click is outside nav
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
-        setIsMenuOpen(false);
-        setIsServicesOpen(false);
+        closeMenus();
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -39,44 +40,41 @@ const Navbar = () => {
   return (
     <nav className="navbar" ref={navRef}>
       <div className="navbar-left">
-        <Link to="/" className="logo-link" onClick={handleLinkClick}>
+        <Link to="/" className="logo-link" onClick={closeMenus}>
           <img src={logo} alt="Logo" className="logo-image" />
           <span className="company-name">PRAVSTA TECHNOLOGY PRIVATE LIMITED</span>
         </Link>
 
-        {/* ✅ Hamburger inside navbar-left */}
-        <div className="navbar-hamburger" onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+        <div className="menu-button-wrapper" onClick={toggleMenu}>
+          <span className="menu-text">Menu</span>
+          <div className="navbar-hamburger">
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
         </div>
       </div>
 
-      <div className="navbar-right">
-        <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><Link to="/" className="navbar-link" onClick={handleLinkClick}>Home</Link></li>
-          <li><Link to="/about" className="navbar-link" onClick={handleLinkClick}>About Us</Link></li>
-          <li
-            className="dropdown"
-            onMouseEnter={() => window.innerWidth > 768 && setIsServicesOpen(true)}
-            onMouseLeave={() => window.innerWidth > 768 && setIsServicesOpen(false)}
-          >
-            <span className="navbar-link" onClick={toggleServicesMobile}>
-              Services ▾
-            </span>
-            {isServicesOpen && (
-              <ul className="dropdown-menu">
-                <li><Link to="/services/automotive" onClick={handleLinkClick}>Automotive Services</Link></li>
-                <li><Link to="/services/ai-data" onClick={handleLinkClick}>AI & Data Services</Link></li>
-                <li><Link to="/services/sap" onClick={handleLinkClick}>SAP Services</Link></li>
-                <li><Link to="/services/web-mobile" onClick={handleLinkClick}>Web & Mobile Development</Link></li>
-              </ul>
-            )}
-          </li>
-          <li><Link to="/contact" className="navbar-link" onClick={handleLinkClick}>Contact</Link></li>
-          <li><button className="cta-button" onClick={handleLinkClick}>Get in Touch</button></li>
-        </ul>
-      </div>
+      <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+        <li><Link className="navbar-link" to="/" onClick={closeMenus}>Home</Link></li>
+        <li><Link className="navbar-link" to="/about" onClick={closeMenus}>About</Link></li>
+
+     
+
+        <li><Link className="navbar-link" to="/contact" onClick={closeMenus}>Contact</Link></li>
+
+           <li className="dropdown">
+          <span className="navbar-link" onClick={toggleServices}>Services</span>
+          {isServicesOpen && (
+            <ul className="dropdown-menu">
+              <li><Link to="/services/automotive" onClick={closeMenus}>Automotive</Link></li>
+              <li><Link to="/services/embedded" onClick={closeMenus}>Embedded Systems</Link></li>
+              <li><Link to="/services/it" onClick={closeMenus}>IT & Cloud</Link></li>
+              <li><Link to="/services/ai" onClick={closeMenus}>AI & Data Science</Link></li>
+            </ul>
+          )}
+        </li>
+      </ul>
     </nav>
   );
 };
