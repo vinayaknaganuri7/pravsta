@@ -7,7 +7,7 @@
 
 html, body {
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
@@ -233,7 +233,6 @@ html, body {
     padding: 10px 20px;
   }
 }
-
 
 /* === MINI MOBILE (200px–319px) === */
 @media (max-width: 319px) {
