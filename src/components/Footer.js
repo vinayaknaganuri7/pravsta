@@ -9,10 +9,10 @@ const Footer = () => {
         <div className="footer-col">
           <h4>About PRAVSTA</h4>
           <ul>
-            <li><a href="/About">Our Story</a></li>
-            <li><a href="/About">Vision & Mission</a></li>
-            <li><a href="/About">Leadership</a></li>
-            <li><a href="/About">Careers</a></li>
+            <li><a href="/Pravstaabout">Vision & Mission</a></li>
+            <li><a href="/Pravstaabout">Leadership</a></li>
+            <li><a href="/Pravstaabout">Our Story</a></li>
+            <li><a href="/Pravstaabout">Careers</a></li>
           </ul>
         </div>
 
@@ -47,9 +47,8 @@ const Footer = () => {
 
         <div className="footer-col address-col">
           <div>
-          <h4>📍 Address</h4>
           <p>
-            <strong>PRAVSTA TECHNOLOGY PRIVATE LIMITED</strong> | 4<sup>th</sup> Floor, Balaji Business Center, Pune-Mumbai Highway (NH 4), Next to Hotel Spice Court, Baner, Pune, Maharashtra – 411045
+            <strong>📍 Address -  PRAVSTA TECHNOLOGY PRIVATE LIMITED</strong> | 4<sup>th</sup> Floor, Balaji Business Center, Pune-Mumbai Highway (NH 4), Next to Hotel Spice Court, Baner, Pune, Maharashtra – 411045
           </p>
           </div>
         </div>

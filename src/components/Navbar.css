@@ -11,10 +11,6 @@
   --color-glass-border: rgba(255, 255, 255, 0.08);
 }
 
-/* === Fonts (Load in index.html) ===
-<link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-*/
-
 /* === Reset & Base === */
 * {
   margin: 0;
@@ -142,37 +138,59 @@ body, html {
 }
 
 /* === Dropdown === */
+/* Parent dropdown */
 .dropdown {
   position: relative;
+  display: inline-block;
 }
 
+/* The clickable text */
+.navbar-link {
+  cursor: pointer;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #07BFFF;
+}
+
+/* Dropdown menu */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--color-dark-ui);
-  list-style: none;
-  padding: 10px 0;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  z-index: 1000;
-  min-width: 220px;
+  background-color: #1e1e20;
+  padding: 12px 0;
+  margin-top: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  z-index: 999;
+  width: 220px;
+  animation: fadeIn 0.2s ease-in-out;
 }
 
+/* List items */
 .dropdown-menu li {
+  list-style: none;
   padding: 8px 20px;
 }
 
 .dropdown-menu li a {
-  color: var(--color-white);
   text-decoration: none;
+  color: #cccccc;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
   display: block;
-  font-family: 'Inter', sans-serif;
+  width: 100%;
 }
 
 .dropdown-menu li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
+  color: #0FFFB2;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
 }
 
 /* === Responsive: Mobile === */

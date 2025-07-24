@@ -16,44 +16,49 @@
   margin: auto;
   padding-bottom: 20px;
 }
-
 .footer-col {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 15px;
+  padding-bottom: 20px;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #f1f1f1;
 }
 
 .footer-col h4 {
   margin-bottom: 15px;
   font-family: 'Montserrat', sans-serif;
   color: #07BFFF;
-  font-size: 1.05rem;
-  text-align: center;
+  font-size: 1.1rem;
+  text-align: left; /* Make consistent with content */
+  font-weight: 600;
 }
 
 .footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: center;
+  text-align: left; /* Match heading and link alignment */
 }
 
 .footer-col ul li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-col ul li a {
-  color: #D1D1D1;
+  color: #d1d1d1;
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
 }
 
 .footer-col ul li a:hover {
-  color: #0FFFB2;
+  color: #0fffB2;
+  text-decoration: underline;
 }
 
 .footer-icons {
-  text-align: center;
+  text-align: left;
 }
 
 .footer-icons a {
@@ -78,6 +83,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.Home{
+  align-items: center;
 }
 
 .address-col p {

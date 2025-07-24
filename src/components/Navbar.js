@@ -59,10 +59,6 @@ const Navbar = () => {
         <li><Link className="navbar-link" to="/" onClick={closeMenus}>Home</Link></li>
         <li><Link className="navbar-link" to="/about" onClick={closeMenus}>About</Link></li>
 
-     
-
-        <li><Link className="navbar-link" to="/contact" onClick={closeMenus}>Contact</Link></li>
-
            <li className="dropdown">
           <span className="navbar-link" onClick={toggleServices}>Services</span>
           {isServicesOpen && (
@@ -74,6 +70,8 @@ const Navbar = () => {
             </ul>
           )}
         </li>
+        
+        <li><Link className="navbar-link" to="/contact" onClick={closeMenus}>Contact</Link></li>
       </ul>
     </nav>
   );
