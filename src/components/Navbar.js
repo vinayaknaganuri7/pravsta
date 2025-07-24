@@ -6,8 +6,7 @@ import './Navbar.css';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-
-  const navRef = useRef(); // reference to the entire nav
+  const navRef = useRef();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,7 +22,6 @@ const Navbar = () => {
     setIsServicesOpen(false);
   };
 
-  // 🔒 Auto close menus if click is outside nav
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -31,7 +29,6 @@ const Navbar = () => {
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -58,8 +55,7 @@ const Navbar = () => {
       <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
         <li><Link className="navbar-link" to="/" onClick={closeMenus}>Home</Link></li>
         <li><Link className="navbar-link" to="/about" onClick={closeMenus}>About</Link></li>
-
-           <li className="dropdown">
+        <li className="dropdown">
           <span className="navbar-link" onClick={toggleServices}>Services</span>
           {isServicesOpen && (
             <ul className="dropdown-menu">
@@ -70,7 +66,6 @@ const Navbar = () => {
             </ul>
           )}
         </li>
-        
         <li><Link className="navbar-link" to="/contact" onClick={closeMenus}>Contact</Link></li>
       </ul>
     </nav>
