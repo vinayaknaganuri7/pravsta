@@ -67,6 +67,10 @@
   color: #0FFFB2;
 }
 
+.email-contact{
+  margin-left: 246px;
+}
+
 /* === Centered Address Column === */
 .address-col {
   grid-column: span 2;

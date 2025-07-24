@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -42,10 +42,6 @@ const Footer = () => {
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             <a href="https://www.linkedin.com/company/pravsta" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-          </div>
-          <div className="email-contact">
-            <FaEnvelope style={{ marginRight: '8px' }} />
-            <a href="mailto:info@pravsta.com">info@pravsta.com</a>
           </div>
         </div>
 
