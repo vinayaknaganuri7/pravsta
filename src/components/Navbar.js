@@ -1,30 +1,29 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from './pages/images/logo.png';
 import './Navbar.css';
+import logo from './pages/images/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const navRef = useRef();
+  const menuRef = useRef(null);
+  const servicesRef = useRef(null);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    setIsServicesOpen(false);
-  };
-
-  const toggleServices = () => {
-    setIsServicesOpen(prev => !prev);
-  };
-
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleServices = () => setIsServicesOpen(!isServicesOpen);
   const closeMenus = () => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        servicesRef.current &&
+        !servicesRef.current.contains(e.target)
+      ) {
         closeMenus();
       }
     };
@@ -35,28 +34,23 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar" ref={navRef}>
+    <nav className="navbar">
       <div className="navbar-left">
-        <Link to="/" className="logo-link" onClick={closeMenus}>
-          <img src={logo} alt="Logo" className="logo-image" />
+        <Link to="/" className="logo-link">
+          <img src={logo} alt="Company Logo" className="logo-image" />
           <span className="company-name">PRAVSTA TECHNOLOGY PRIVATE LIMITED</span>
         </Link>
-
         <div className="menu-button-wrapper" onClick={toggleMenu}>
-          <span className="menu-text">Menu</span>
-          <div className="navbar-hamburger">
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
+          <span className="menu-icon">&#9776;</span>
         </div>
       </div>
 
-      <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-        <li><Link className="navbar-link" to="/" onClick={closeMenus}>Home</Link></li>
-        <li><Link className="navbar-link" to="/about" onClick={closeMenus}>About</Link></li>
-        <li className="dropdown">
-          <span className="navbar-link" onClick={toggleServices}>Services</span>
+      <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`} ref={menuRef}>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+
+        <li className="services-dropdown" ref={servicesRef}>
+          <span className="dropdown-toggle" onClick={toggleServices}>Services</span>
           {isServicesOpen && (
             <ul className="dropdown-menu">
               <li><Link to="/services/automotive" onClick={closeMenus}>Automotive</Link></li>
@@ -66,7 +60,8 @@ const Navbar = () => {
             </ul>
           )}
         </li>
-        <li><Link className="navbar-link" to="/contact" onClick={closeMenus}>Contact</Link></li>
+
+        <li><Link to="/contact">Contact</Link></li>
       </ul>
     </nav>
   );
