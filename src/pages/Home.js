@@ -3,10 +3,10 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import './Home.css';
+
+// Images
 import introImage from '../components/pages/images/Intr.jpg';
 import visionImage from '../components/pages/images/car.jpg';
-
-// Updated image icons
 import iotImage from '../components/pages/images/Intr.jpg';
 import cockpitImage from '../components/pages/images/Intr.jpg';
 import dataToolsImage from '../components/pages/images/Intr.jpg';
@@ -18,46 +18,42 @@ const Home = () => {
       <Navbar />
       <Hero />
 
-      {/* === Introduction Section === */}
+      {/* === Introduction, Vision & Commitment Section === */}
       <section className="home-section fade-in">
-        <div className="intro-row">
-          <div className="intro-image-wrapper">
-            <img src={introImage} alt="Introduction" className="intro-sub-image" />
+        <h3 className="home-header">Introduction & Vision</h3>
+        <div className="tech-grid three-col">
+          {/* Introduction Card */}
+          <div className="tech-card animate-3d">
+            <img src={introImage} alt="Who We Are" className="tech-img" />
+            <h4>Introduction</h4>
+            <p className="justified">
+              At <strong>PRAVSTA</strong>, we deliver cutting-edge engineering and IT solutions tailored to meet the evolving needs of modern enterprises.
+              Our core expertise includes <strong>automotive systems</strong>, <strong>embedded technologies</strong>, <strong>cloud computing</strong>, and <strong>enterprise platforms</strong>.
+            {/* </p>
+            <p className="justified"> */}
+              We combine technical excellence with a client-first approach, driving innovation, accelerating digital transformation, and delivering measurable business outcomes.
+            </p>
           </div>
-          <div className="card-grid">
-            <div className="info-card">
-              <h3>Introduction</h3>
-              <p>
-                PRAVSTA is a forward-thinking engineering and IT services provider, delivering tailored solutions across
-                automotive, embedded systems, cloud, and enterprise platforms. We focus on enabling technological growth
-                through deep domain expertise and a passion for innovation.
-              </p>
-              <p>
-                Our client-first approach and global delivery model help organizations enhance performance,
-                accelerate product development, and scale efficiently in a digital world.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* === Vision Section === */}
-      <section className="home-section fade-in">
-        <div className="intro-row">
-          <div className="intro-image-wrapper">
-            <img src={visionImage} alt="Vision" className="intro-sub-image" />
+          {/* Vision Card */}
+          <div className="tech-card animate-3d">
+            <img src={visionImage} alt="Vision" className="tech-img" />
+            <h4>Our Vision</h4>
+            <p className="justified">
+              To become a globally trusted technology leader, driving industry transformation through intelligent engineering and next-generation digital solutions.
+            </p>
+            <p className="justified">
+              Guided by integrity and a commitment to excellence, we empower organizations to innovate boldly and thrive in a rapidly evolving digital world.
+            </p>
           </div>
-          <div className="card-grid">
-            <div className="info-card">
-              <h3>Our Vision</h3>
-              <p>
-                To be a global technology leader, transforming industries through smart engineering and intelligent digital
-                solutions. We aim to drive innovation in every line of code, every embedded system, and every connected vehicle.
-              </p>
-              <p>
-                With a strong foundation in integrity and engineering excellence, we help businesses embrace the future with confidence.
-              </p>
-            </div>
+
+          {/* Commitment Card */}
+          <div className="tech-card animate-3d">
+            <img src={visionImage} alt="Commitment" className="tech-img" />
+            <h4>Our Commitment</h4>
+            <p className="justified">
+              We are dedicated to delivering measurable value through cutting-edge innovation, uncompromising quality, and trusted partnerships — accelerating digital transformation and driving engineering excellence across every project.
+            </p>
           </div>
         </div>
       </section>
@@ -66,10 +62,8 @@ const Home = () => {
       <section className="home-section fade-in">
         <h3 className="home-header">Our Core Technology Expertise</h3>
         <div className="tech-grid">
-
-          {/* === IoT & Connectivity === */}
-          <div className="tech-card">
-            <img src={iotImage} alt="IoT & Connectivity" />
+          <div className="tech-card animate-3d">
+            <img src={iotImage} alt="IoT & Connectivity" className="tech-img" />
             <h4>IoT & Connectivity Testing</h4>
             <ul>
               <li>Bluetooth Functional & Interoperability Testing</li>
@@ -80,9 +74,8 @@ const Home = () => {
             </ul>
           </div>
 
-          {/* === SDV & Cockpit === */}
-          <div className="tech-card">
-            <img src={cockpitImage} alt="SDV Cockpit" />
+          <div className="tech-card animate-3d">
+            <img src={cockpitImage} alt="SDV Cockpit" className="tech-img" />
             <h4>SDV & Connected Cockpit</h4>
             <ul>
               <li>Digital Instrument Cluster Development</li>
@@ -93,9 +86,8 @@ const Home = () => {
             </ul>
           </div>
 
-          {/* === Data Science & Tools === */}
-          <div className="tech-card">
-            <img src={dataToolsImage} alt="Data Science Tools" />
+          <div className="tech-card animate-3d">
+            <img src={dataToolsImage} alt="Data Science Tools" className="tech-img" />
             <h4>Data Science & Engineering</h4>
             <ul>
               <li>Data Pipeline & Visualization Solutions</li>
@@ -106,9 +98,8 @@ const Home = () => {
             </ul>
           </div>
 
-          {/* === SAP Services === */}
-          <div className="tech-card">
-            <img src={sapImage} alt="SAP Enterprise" />
+          <div className="tech-card animate-3d">
+            <img src={sapImage} alt="SAP Solutions" className="tech-img" />
             <h4>SAP & Enterprise Solutions</h4>
             <ul>
               <li>Real Estate Data Migration (RE-FX, FI)</li>
@@ -118,7 +109,6 @@ const Home = () => {
               <li>SAP BTP & Integration Scenarios</li>
             </ul>
           </div>
-
         </div>
       </section>
 
@@ -128,3 +118,4 @@ const Home = () => {
 };
 
 export default Home;
+
