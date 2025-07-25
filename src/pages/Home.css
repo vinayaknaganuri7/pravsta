@@ -1,5 +1,4 @@
-/* Home.css */
-
+/* === General Layout === */
 .home-wrapper {
   background-color: #f8f9fb;
   color: #111;
@@ -11,61 +10,48 @@
   padding: 4rem 2rem;
 }
 
+/* === Section Headings === */
 .home-header {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
-  color: #111;
+  color: #07BFFF;
 }
 
-
+/* === Intro + Vision Section Layout === */
 .intro-row {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  gap: 2rem;
   flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .intro-image-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  flex: 1 1 600px;
+  max-width: 640px;
   padding: 1rem;
 }
 
-.intro-image-wrapper img {
-  max-width: 70%;
+.intro-sub-image {
+  width: 100%;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Optional hover effect */
-.intro-image-wrapper img:hover {
+.intro-sub-image:hover {
   transform: scale(1.03);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-}
-
-
-.intro-sub-image {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
 }
 
 .card-grid {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 1 1 600px;
+  max-width: 640px;
+  padding: 1rem;
 }
 
 .info-card {
@@ -73,68 +59,130 @@
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  max-width: 100%;
   width: 100%;
-  max-width: 640px;
   text-align: left;
+  font-family: 'Inter', 'Poppins', sans-serif;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
 }
 
-/* Optional hover effect */
 .info-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
-
 .info-card h3 {
-  font-size: 1.75rem; /* 28px */
+  font-size: 1.75rem;
   font-weight: 700;
   color: #07BFFF;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
   margin-bottom: 1rem;
   position: relative;
-  letter-spacing: -0.3px;
-  line-height: 1.3;
 }
 
-/* Optional decorative underline */
 .info-card h3::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -6px;
+  left: 0;
   height: 3px;
   width: 50px;
   background: linear-gradient(90deg, #07BFFF, #4ecdc4);
   border-radius: 4px;
 }
 
-/* Optional subtle hover glow */
-.info-card h3:hover {
-  text-shadow: 0 2px 8px rgba(7, 191, 255, 0.3);
-  transform: translateY(-1px);
-  transition: all 0.3s ease;
-}
-
-
 .info-card p {
   font-size: 18px;
   line-height: 28px;
-  margin-bottom: 1rem;
   text-align: justify;
   color: #1e1e1e;
-  font-family: 'Inter', 'Poppins', 'Segoe UI', Roboto, sans-serif;
+  margin-bottom: 1rem;
 }
 
+/* === Technology Grid Section === */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-items: center;
+}
+
+.tech-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.tech-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.tech-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0b5ed7;
+  margin-bottom: 1rem;
+}
+
+.tech-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.tech-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* === Fade Animation === */
+.fade-in {
+  animation: fadeIn 1s ease-in-out both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive Fixes === */
 @media (max-width: 768px) {
   .intro-row {
     flex-direction: column;
-    gap: 3rem;
   }
 
-  .intro-sub-image {
+  .intro-image-wrapper,
+  .card-grid {
     max-width: 100%;
+    padding: 0;
+  }
+
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .tech-card {
+    padding: 1.5rem;
   }
 }
