@@ -7,9 +7,9 @@ import './Home.css';
 // Images
 import introImage from '../components/pages/images/Intr.jpg';
 import visionImage from '../components/pages/images/car.jpg';
-import iotImage from '../components/pages/images/Intr.jpg';
-import cockpitImage from '../components/pages/images/Intr.jpg';
-import dataToolsImage from '../components/pages/images/Intr.jpg';
+import iotImage from '../components/pages/images/iot.jpg';
+import cockpitImage from '../components/pages/images/sdv.jpg';
+import dataToolsImage from '../components/pages/images/data.jpg';
 import sapImage from '../components/pages/images/Intr.jpg';
 
 const Home = () => {
