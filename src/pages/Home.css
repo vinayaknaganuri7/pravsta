@@ -3,7 +3,7 @@
   background-color: #f2f6fc;
   color: #111;
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Inter', sans-serif;
 }
 
 .home-section {
@@ -22,7 +22,8 @@
 /* === Intro + Vision Section Layout === */
 .intro-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;       /* Force row layout */
+  flex-wrap: nowrap;         /* No wrapping on tablets */
   align-items: stretch;
   justify-content: center;
   gap: 2.5rem;
@@ -104,8 +105,6 @@
   line-height: 30px;
   color: #1e1e1e;
   margin-bottom: 1rem;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 /* === Core Technology Grid === */
@@ -171,6 +170,12 @@
 
 .tech-card ul li {
   margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.tech-card ul li:hover {
+  color: #009fe3;
+  cursor: pointer;
 }
 
 /* === Fade Animation === */
@@ -189,10 +194,40 @@
   }
 }
 
-/* === Responsive Fixes === */
-@media (max-width: 768px) {
+/* === Responsive Fixes for Tablets (541px - 1024px) === */
+@media (max-width: 1024px) {
+  .home-header {
+    font-size: 2rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .tech-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .info-card, .tech-card {
+    padding: 2rem;
+  }
+
+  .intro-sub-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .intro-image-wrapper,
+  .card-grid {
+    max-width: 100%;
+  }
+}
+
+/* === Responsive Fixes for Mobile Devices (<=540px only) === */
+@media (max-width: 540px) {
   .intro-row {
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 1.8rem;
   }
 
@@ -214,7 +249,26 @@
     width: 100%;
     height: auto;
   }
+
+  .home-header {
+    font-size: 1.8rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .tech-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .info-card p,
+  .tech-card p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .tech-card ul {
+    font-size: 15px;
+  }
 }
-
-
-

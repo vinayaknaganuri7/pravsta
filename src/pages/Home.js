@@ -10,7 +10,7 @@ import visionImage from '../components/pages/images/car.jpg';
 import iotImage from '../components/pages/images/iot.jpg';
 import cockpitImage from '../components/pages/images/sdv.jpg';
 import dataToolsImage from '../components/pages/images/data.jpg';
-import sapImage from '../components/pages/images/Intr.jpg';
+import sapImage from '../components/pages/images/sap.jpg';
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
 
       {/* === Introduction, Vision & Commitment Section === */}
       <section className="home-section fade-in">
-        <h3 className="home-header">Introduction & Vision</h3>
+        <h3 className="home-header">Introduction </h3>
         <div className="tech-grid three-col">
           {/* Introduction Card */}
           <div className="tech-card animate-3d">
