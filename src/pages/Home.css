@@ -272,3 +272,23 @@
     font-size: 15px;
   }
 }
+
+
+/* === Tablet Specific Fix (728px to 1024px): Stack intro cards in one column === */
+@media (min-width: 728px) and (max-width: 1024px) {
+  .intro-row {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .intro-image-wrapper,
+  .card-grid {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .info-card {
+    text-align: justify;
+  }
+}
