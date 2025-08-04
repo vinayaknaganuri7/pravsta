@@ -5,11 +5,12 @@ import Footer from '../components/Footer';
 import './Home.css';
 
 // Images
-import introImage from '../components/pages/images/Intr.jpg';
+import introImage from '../components/pages/images/Intr2.jpeg';
 import visionImage from '../components/pages/images/car.jpg';
+import commitment from '../components/pages/images/commit.jpeg';
 import iotImage from '../components/pages/images/iot.jpg';
-import cockpitImage from '../components/pages/images/sdv.jpg';
-import dataToolsImage from '../components/pages/images/data.jpg';
+import cockpitVideo from '../components/pages/images/carvi.mp4';
+import dataToolsImage from '../components/pages/images/datasci.jpeg';
 import sapImage from '../components/pages/images/sap.jpg';
 
 const Home = () => {
@@ -49,7 +50,7 @@ const Home = () => {
 
           {/* Commitment Card */}
           <div className="tech-card animate-3d">
-            <img src={visionImage} alt="Commitment" className="tech-img" />
+            <img src={commitment} alt="Commitment" className="tech-img" />
             <h4>Our Commitment</h4>
             <p className="justified">
               We are dedicated to delivering measurable value through cutting-edge innovation, uncompromising quality, and trusted partnerships — accelerating digital transformation and driving engineering excellence across every project.
@@ -74,21 +75,25 @@ const Home = () => {
             </ul>
           </div>
 
-          <div className="tech-card animate-3d">
-            <img src={cockpitImage} alt="SDV Cockpit" className="tech-img" />
-            <h4>SDV & Connected Cockpit</h4>
-            <ul>
-              <li>Digital Instrument Cluster Development</li>
-              <li>IVI (In-Vehicle Infotainment) Systems</li>
-              <li>Telematics & Connectivity Modules</li>
-              <li>Over-the-Air (FOTA/SOTA) Solutions</li>
-              <li>ECU Software Development & Validation</li>
-            </ul>
-          </div>
+         <div className="tech-card animate-3d">
+              <video className="tech-img" autoPlay loop muted playsInline>
+                <source src={cockpitVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <h4>SDV & Connected Cockpit</h4>
+              <ul>
+                <li>Digital Instrument Cluster Development</li>
+                <li>IVI (In-Vehicle Infotainment) Systems</li>
+                <li>Telematics & Connectivity Modules</li>
+                <li>Over-the-Air (FOTA/SOTA) Solutions</li>
+                <li>ECU Software Development & Validation</li>
+              </ul>
+            </div>
+
 
           <div className="tech-card animate-3d">
             <img src={dataToolsImage} alt="Data Science Tools" className="tech-img" />
-            <h4>Data Science & Engineering</h4>
+            <h3>Data Science and engineering</h3>
             <ul>
               <li>Data Pipeline & Visualization Solutions</li>
               <li>AI/ML Model Development & Training</li>
