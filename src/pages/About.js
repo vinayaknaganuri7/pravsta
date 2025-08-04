@@ -3,67 +3,75 @@ import './About.css';
 import Hero from '../components/Navbar';
 import Footer from '../components/Footer';
 
+import storyImg from '../components/pages/images/Intr.jpg';
+import visionImg from '../components/pages/images/Intr.jpg';
+import leadershipImg from '../components/pages/images/Intr.jpg';
+import careersImg from '../components/pages/images/Intr.jpg';
+
 const AboutContent = () => {
   return (
     <>
       <Hero title="About PRAVSTA" subtitle="Engineering the Future of Technology" />
 
-      {/* About Page Header */}
-      <div className="about-header">
-        <h1>About PRAVSTA TECHNOLOGY PRIVATE LIMITED</h1>
-        <p>Discover our journey, vision, leadership, and the people powering innovation.</p>
-      </div>
+    
 
       <div className="about-wrapper">
         <div className="about-grid">
 
           <section className="about-card" id="our-story">
-            <h2>📖 Our Story</h2>
-            <p>
-              PRAVSTA began with a bold vision — to reimagine how technology can
-              create meaningful, scalable, and positive impact. Founded by engineers
-              and tech enthusiasts, we’ve grown from a niche startup into a trusted
-              partner for enterprise innovation. Our journey is fueled by precision,
-              creativity, and a passion to solve real-world challenges.
-            </p>
+            <div className="about-image-heading">
+              <img src={storyImg} alt="Our Story" className="about-icon" />
+              <h2>Our Story</h2>
+            </div>
+            <div className="about-content">
+              <p>
+                PRAVSTA began with a bold vision — to reimagine how technology can
+                create meaningful, scalable, and positive impact. Founded by engineers
+                and tech enthusiasts, we’ve grown from a niche startup into a trusted
+                partner for enterprise innovation.
+              </p>
+            </div>
           </section>
 
           <section className="about-card" id="vision-mission">
-            <h2>🎯 Vision & Mission</h2>
-            <p>
-              <strong>Vision:</strong> To be a global leader in transformative technologies,
-              enabling industries and communities to thrive in a digital-first world.
-            </p>
-            <p>
-              <strong>Mission:</strong> To architect and deliver intelligent, secure, and
-              high-performance technology solutions by leveraging deep domain
-              expertise, agile methodologies, and a commitment to client success.
-            </p>
-            <ul>
-              <li>Empower innovation through collaboration</li>
-              <li>Drive operational excellence and quality</li>
-              <li>Foster talent, ethics, and sustainability</li>
-            </ul>
+            <div className="about-image-heading">
+              <img src={visionImg} alt="Vision and Mission" className="about-icon" />
+              <h2>Vision & Mission</h2>
+            </div>
+            <div className="about-content">
+              <p><strong>Vision:</strong> To be a global leader in transformative technologies.</p>
+              <p><strong>Mission:</strong> To architect and deliver intelligent, secure, and high-performance solutions.</p>
+              <ul>
+                <li>Empower innovation through collaboration</li>
+                <li>Drive operational excellence</li>
+                <li>Foster talent and sustainability</li>
+              </ul>
+            </div>
           </section>
 
           <section className="about-card" id="leadership">
-            <h2>👨‍💼 Leadership</h2>
-            <p>
-              Our leadership team brings decades of experience from Fortune 500
-              companies, cutting-edge startups, and R&D powerhouses. We believe in
-              a culture of mentorship, flat hierarchy, and agility where ideas
-              thrive and ownership drives progress.
-            </p>
+            <div className="about-image-heading">
+              <img src={leadershipImg} alt="Leadership" className="about-icon" />
+              <h2>Leadership</h2>
+            </div>
+            <div className="about-content">
+              <p>
+                Our leadership team brings decades of experience from Fortune 500
+                companies and R&D hubs. We believe in flat hierarchy and innovation.
+              </p>
+            </div>
           </section>
 
           <section className="about-card" id="careers">
-            <h2>💼 Careers</h2>
-            <p>
-              Join us in shaping the next generation of technology. At PRAVSTA,
-              we empower curious minds and passionate builders. We’re always on
-              the lookout for innovators, engineers, and dreamers who believe in
-              technology with purpose. Build with us. Grow with us.
-            </p>
+            <div className="about-image-heading">
+              <img src={careersImg} alt="Careers" className="about-icon" />
+              <h2>Careers</h2>
+            </div>
+            <div className="about-content">
+              <p>
+                Join PRAVSTA and shape the future. We seek builders, dreamers, and doers.
+              </p>
+            </div>
           </section>
 
         </div>
