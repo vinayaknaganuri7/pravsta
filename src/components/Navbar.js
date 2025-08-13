@@ -50,18 +50,18 @@ const Navbar = () => {
         <li><Link to="/about">About</Link></li>
 
         <li className="services-dropdown" ref={servicesRef}>
-          <span className="dropdown-toggle" onClick={toggleServices}>Services</span>
+          <span className="dropdown-toggle" onClick={toggleServices}>Industries</span>
           {isServicesOpen && (
             <ul className="dropdown-menu">
               <li><Link to="/services/automotive" onClick={closeMenus}>Automotive</Link></li>
-              <li><Link to="/services/embedded" onClick={closeMenus}>Embedded Systems</Link></li>
-              <li><Link to="/services/it" onClick={closeMenus}>IT & Cloud</Link></li>
-              <li><Link to="/services/ai" onClick={closeMenus}>AI & Data Science</Link></li>
+              <li><Link to="/services/embedded" onClick={closeMenus}>Medical</Link></li>
+              <li><Link to="/services/it" onClick={closeMenus}>Industrial machine</Link></li>
+              <li><Link to="/services/ai" onClick={closeMenus}>IT</Link></li>
             </ul>
           )}
         </li>
 
-        <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/Contact">Contact</Link></li>
       </ul>
     </nav>
   );

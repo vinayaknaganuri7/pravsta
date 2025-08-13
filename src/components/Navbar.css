@@ -1,25 +1,25 @@
-/* === UPDATED NAVBAR CSS === */
-
+/* === MODERN TRANSLUCENT NAVBAR === */
 .navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #000000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
   color: white;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   font-family: 'Poppins', sans-serif;
-  flex-wrap: wrap; /* Ensure wrapping if needed */
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* === Left Side === */
 .navbar-left {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  white-space: nowrap;
 }
 
 .logo-link {
@@ -39,48 +39,85 @@
   font-size: 1rem;
   font-weight: 600;
   white-space: nowrap;
-  max-width: none;
-  overflow: visible;
 }
 
+/* === Menu Icon (Mobile) === */
 .menu-button-wrapper {
   display: none;
-  align-items: center;
   cursor: pointer;
 }
 
+.menu-icon {
+  font-size: 1.8rem;
+  color: white;
+}
+
+/* === Main Links with Hover Animation === */
 .navbar-links {
   display: flex;
   list-style: none;
   gap: 2rem;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;
 }
 
-.navbar-links a {
+.navbar-links a,
+.dropdown-toggle {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
-.navbar-links a:hover {
-  color: #00d4ff; /* Highlight color on hover */
+.navbar-links a::after,
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #00d4ff;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
+}
+
+.navbar-links a:hover,
+.dropdown-toggle:hover {
+  color: #00d4ff;
+}
+
+/* === Dropdown with Animation === */
+.services-dropdown {
+  position: relative;
 }
 
 .dropdown-menu {
   position: absolute;
-  background-color: rgb(0, 0, 0);
-  top: 100%;
-  left: auto;
-  display: flex;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  top: 120%;
+  left: 0;
+  display: none;
   flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   margin-top: 0.5rem;
   padding: 0.5rem 0;
-  border-radius: 8px;
   min-width: 200px;
   z-index: 999;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.services-dropdown:hover .dropdown-menu {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dropdown-menu li {
@@ -88,31 +125,27 @@
 }
 
 .dropdown-menu li a {
-  color: #ffffff;
+  color: white;
   text-decoration: none;
   display: block;
   font-size: 0.95rem;
 }
 
 .dropdown-menu li:hover {
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* === Mobile Menu === */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    padding: 1rem;
   }
 
   .navbar-left {
     width: 100%;
     justify-content: space-between;
-  }
-
-  .company-name {
-    font-size: 0.9rem;
-    white-space: normal;
-    max-width: 100%;
   }
 
   .logo-image {
@@ -127,9 +160,11 @@
     display: none;
     flex-direction: column;
     gap: 1rem;
-    background-color: #000000;
-    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 1rem;
     width: 100%;
+    animation: slideDown 0.3s ease forwards;
   }
 
   .navbar-links.active {
@@ -138,22 +173,20 @@
 
   .dropdown-menu {
     position: static;
-    background-color: rgb(0, 0, 0);
-    box-shadow: none;
+    background: rgba(0, 0, 0, 0.9);
     margin-top: 0.5rem;
     padding-left: 1rem;
-    border-radius: 0;
   }
+}
 
-  .dropdown-menu li {
-    padding: 0.4rem 0;
+/* Mobile Slide Down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
-  .dropdown-menu li:hover {
-    background-color: #eee;
-  }
-
-  .navbar-links a {
-    color: white;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

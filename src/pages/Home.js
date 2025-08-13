@@ -4,14 +4,21 @@ import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import './Home.css';
 
+<<<<<<< HEAD
 // Images
 import introImage from '../components/pages/images/Intr2.jpeg';
 import visionImage from '../components/pages/images/car.jpg';
 import commitment from '../components/pages/images/commit.jpeg';
 import iotImage from '../components/pages/images/iot.jpg';
 import cockpitVideo from '../components/pages/images/carvi.mp4';
+=======
+// Images & Videos
+import iotImage from '../components/pages/images/iot.jpg';
+import cockpitVideo from '../components/pages/images/Int.jpg';
+>>>>>>> 04cd09e (video)
 import dataToolsImage from '../components/pages/images/datasci.jpeg';
 import sapImage from '../components/pages/images/sap.jpg';
+import embeddedImage from '../components/pages/images/embedded.jpeg';
 
 const Home = () => {
   return (
@@ -19,22 +26,24 @@ const Home = () => {
       <Navbar />
       <Hero />
 
-      {/* === Introduction, Vision & Commitment Section === */}
-      <section className="home-section fade-in">
-        <h3 className="home-header">Introduction </h3>
-        <div className="tech-grid three-col">
-          {/* Introduction Card */}
-          <div className="tech-card animate-3d">
-            <img src={introImage} alt="Who We Are" className="tech-img" />
-            <h4>Introduction</h4>
-            <p className="justified">
-              At <strong>PRAVSTA</strong>, we deliver cutting-edge engineering and IT solutions tailored to meet the evolving needs of modern enterprises.
-              Our core expertise includes <strong>automotive systems</strong>, <strong>embedded technologies</strong>, <strong>cloud computing</strong>, and <strong>enterprise platforms</strong>.
-            {/* </p>
-            <p className="justified"> */}
-              We combine technical excellence with a client-first approach, driving innovation, accelerating digital transformation, and delivering measurable business outcomes.
+      {/* === Embedded Systems & IoT Solutions Section === */}
+      <section className="embedded-section">
+        <div className="embedded-content">
+          <div className="embedded-text">
+            <h2>Embedded Systems & IoT Solutions</h2>
+            <p>
+              At <strong>PRAVSTA TECHNOLOGY PRIVATE LIMITED</strong>, we design and deliver
+              high-performance embedded systems for automotive, medical, and industrial applications.
+              Our engineering team blends hardware, software, and connectivity to create innovative, reliable solutions.
             </p>
+            <ul>
+              <li>✔ Real-time embedded software development</li>
+              <li>✔ Hardware integration & optimization</li>
+              <li>✔ IoT device connectivity & cloud integration</li>
+              <li>✔ Safety-critical & secure firmware solutions</li>
+            </ul>
           </div>
+<<<<<<< HEAD
 
           {/* Vision Card */}
           <div className="tech-card animate-3d">
@@ -55,6 +64,10 @@ const Home = () => {
             <p className="justified">
               We are dedicated to delivering measurable value through cutting-edge innovation, uncompromising quality, and trusted partnerships — accelerating digital transformation and driving engineering excellence across every project.
             </p>
+=======
+          <div className="embedded-image">
+            <img src={embeddedImage} alt="Embedded Systems" />
+>>>>>>> 04cd09e (video)
           </div>
         </div>
       </section>
@@ -75,6 +88,7 @@ const Home = () => {
             </ul>
           </div>
 
+<<<<<<< HEAD
          <div className="tech-card animate-3d">
               <video className="tech-img" autoPlay loop muted playsInline>
                 <source src={cockpitVideo} type="video/mp4" />
@@ -90,6 +104,19 @@ const Home = () => {
               </ul>
             </div>
 
+=======
+          <div className="tech-card animate-3d">
+            <img src={cockpitVideo} alt="SDV & Connected Cockpit" className="tech-img" />
+            <h4>SDV & Connected Cockpit</h4>
+            <ul>
+              <li>Digital Instrument Cluster Development</li>
+              <li>IVI (In-Vehicle Infotainment) Systems</li>
+              <li>Telematics & Connectivity Modules</li>
+              <li>Over-the-Air (FOTA/SOTA) Solutions</li>
+              <li>ECU Software Development & Validation</li>
+            </ul>
+          </div>
+>>>>>>> 04cd09e (video)
 
           <div className="tech-card animate-3d">
             <img src={dataToolsImage} alt="Data Science Tools" className="tech-img" />
@@ -123,4 +150,3 @@ const Home = () => {
 };
 
 export default Home;
-

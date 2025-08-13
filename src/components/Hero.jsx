@@ -1,28 +1,30 @@
-import React from 'react';
-import './Hero.css';
+import React from "react";
+import "./Hero.css";
+import videoSrc from "../components/pages/Video/bck.mp4"; // adjust path
 
-const Hero = () => {
+const Home = () => {
   return (
-    <section className="hero-section" role="banner" aria-label="Hero section with introduction">
-      <div className="overlay" aria-hidden="true" />
+    <div className="home-wrapper">
+      
+      {/* Video Section with Overlay & Text */}
+      <section className="video-section">
+        <video className="responsive-video" autoPlay loop muted playsInline>
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
 
-      <div className="hero-content">
-        <h1>
-          Committed to<br />
-          <span className="highlight">Exceptional Embedded Solutions</span><br />
-          for IT, Automotive Innovation,<br />
-          & Data Science
-        </h1>
-        <p>
-          Your trusted partner in driving digital transformation through cutting-edge technologies.
-        </p>
-        <div className="hero-buttons">
-          <button className="btn-primary">Our Services</button>
-          <button className="btn-outline">View Projects</button>
+        {/* Dark Overlay */}
+        <div className="video-overlay"></div>
+
+        {/* Centered Text */}
+        <div className="video-content">
+          <h1>PRAVSTA TECHNOLOGY PRIVATE LIMITED</h1>
+          <p>Innovating the Future of Automotive, Embedded, IT & AI Solutions</p>
         </div>
-      </div>
-    </section>
+      </section>
+
+    </div>
   );
 };
 
-export default Hero;
+export default Home;
