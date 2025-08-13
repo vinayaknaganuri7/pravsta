@@ -1,8 +1,7 @@
 /* === General Layout === */
 .home-wrapper {
-  background-color: #f2f6fc;
+  background-color: #f8fbff;
   color: #111;
-  min-height: 100vh;
   font-family: 'Poppins', 'Inter', sans-serif;
 }
 
@@ -17,184 +16,17 @@
   text-align: center;
   margin-bottom: 3rem;
   color: #009fe3;
-}
-
-/* === Intro + Vision Section Layout === */
-.intro-row {
-  display: flex;
-  flex-direction: row;       /* Force row layout */
-  flex-wrap: nowrap;         /* No wrapping on tablets */
-  align-items: stretch;
-  justify-content: center;
-  gap: 2.5rem;
-  margin-bottom: 4rem;
-}
-
-.intro-image-wrapper {
-  flex: 1 1 300px;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(145deg, #d9f4ff, #ffffff);
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
-.intro-image-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-}
-
-.intro-sub-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.card-grid {
-  flex: 1 1 300px;
-  max-width: 640px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* === Information Card === */
-.info-card {
-  background-color: #ffffff;
-  padding: 2.5rem;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  width: 100%;
-  font-family: 'Inter', 'Poppins', sans-serif;
-  transition: 0.3s;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-.info-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.18);
-}
-
-.info-card h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #009fe3;
-  margin-bottom: 1.2rem;
   position: relative;
 }
 
-.info-card h3::after {
+.home-header::after {
   content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
+  display: block;
   height: 3px;
-  width: 60px;
+  width: 80px;
   background: linear-gradient(90deg, #009fe3, #4ecdc4);
-  border-radius: 4px;
-}
-
-.info-card p {
-  font-size: 18px;
-  line-height: 30px;
-  color: #1e1e1e;
-  margin-bottom: 1rem;
-}
-
-/* === Core Technology Grid === */
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
-  justify-items: center;
-}
-
-.tech-card {
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  padding: 2rem;
-  text-align: justify;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 420px;
-  font-family: 'Inter', 'Poppins', sans-serif;
-}
-
-.tech-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
-}
-
-.tech-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
-  margin-bottom: 1rem;
-  object-fit: cover;
-}
-
-.tech-card h4 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #0b5ed7;
-  margin-bottom: 1rem;
-}
-
-.tech-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #0b5ed7;
-  margin-bottom: 1rem;
-}
-.tech-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-
-.tech-card p {
-  font-size: 18px;
-  color: #2b2b2b;
-  line-height: 1.75;
-  text-align: justify;
-  text-justify: inter-word;
-  letter-spacing: .2px;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.tech-card ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  text-align: left;
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-}
-
-.tech-card ul li {
-  margin-bottom: 0.5rem;
-  transition: color 0.2s;
-}
-
-.tech-card ul li:hover {
-  color: #009fe3;
-  cursor: pointer;
-}
-
-/* === Fade Animation === */
-.fade-in {
-  animation: fadeIn 1s ease-in-out both;
+  margin: 0.8rem auto 0;
+  border-radius: 3px;
 }
 
 /* === Embedded Section === */
@@ -214,7 +46,7 @@
 
 .embedded-text {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
 }
 
 .embedded-text h2 {
@@ -226,6 +58,7 @@
 
 .embedded-text p {
   font-size: 1.1rem;
+  text-align: justify;
   color: #333;
   margin-bottom: 1.5rem;
   line-height: 1.8;
@@ -254,7 +87,7 @@
 }
 
 .learn-more-btn {
-  background: #009fe3;
+  background: linear-gradient(90deg, #009fe3, #007bbf);
   color: white;
   padding: 0.8rem 2rem;
   border: none;
@@ -262,12 +95,12 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .learn-more-btn:hover {
-  background: #007bbf;
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 159, 227, 0.3);
 }
 
 .embedded-image {
@@ -279,24 +112,88 @@
 
 .embedded-image img {
   width: 100%;
-  max-width: 500px;
+  max-width: 900px;
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .embedded-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .embedded-text ul {
-    text-align: left;
-    display: inline-block;
-  }
+/* === Core Technology Expertise Grid === */
+.tech-section {
+  background: #ffffff;
 }
 
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.tech-card img {
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto 1.2rem;
+  border-radius: 12px;
+}
+
+.tech-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #009fe3;
+  margin-bottom: 1rem;
+}
+
+.tech-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tech-card ul li {
+  font-size: 0.95rem;
+  color: #3a3a3a;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;       /* Keep in one line by default */
+  overflow: hidden;          /* Hide overflow */
+  text-overflow: ellipsis;   /* Add ... when too long */
+  cursor: pointer;           /* Show pointer icon */
+  position: relative;        /* For tooltip positioning */
+}
+
+/* Tooltip on hover */
+.tech-card ul li:hover {
+  white-space: normal; /* Allow wrapping so full text shows */
+  background: #eef6ff; /* Optional highlight */
+  padding: 0.4rem;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+
+
+/* === Animations === */
+.fade-in {
+  animation: fadeIn 1s ease-in-out both;
+}
+
+.slide-in-right {
+  animation: slideInRight 1s ease-in-out both;
+}
 
 @keyframes fadeIn {
   0% {
@@ -309,101 +206,25 @@
   }
 }
 
-/* === Responsive Fixes for Tablets (541px - 1024px) === */
-@media (max-width: 1024px) {
-  .home-header {
-    font-size: 2rem;
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
   }
-
-  .info-card h3 {
-    font-size: 1.8rem;
-  }
-
-  .tech-card h4 {
-    font-size: 1.2rem;
-  }
-
-  .info-card, .tech-card {
-    padding: 2rem;
-  }
-
-  .intro-sub-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .intro-image-wrapper,
-  .card-grid {
-    max-width: 100%;
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-/* === Responsive Fixes for Mobile Devices (<=540px only) === */
-@media (max-width: 540px) {
-  .intro-row {
+/* === Responsive === */
+@media (max-width: 768px) {
+  .embedded-content {
     flex-direction: column;
-    flex-wrap: wrap;
-    gap: 1.8rem;
+    text-align: center;
   }
-
-  .intro-image-wrapper,
-  .card-grid {
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .info-card {
-    padding: 1.8rem;
-  }
-
-  .tech-card {
-    padding: 1.5rem;
-  }
-
-  .intro-sub-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .home-header {
-    font-size: 1.8rem;
-  }
-
-  .info-card h3 {
-    font-size: 1.6rem;
-  }
-
-  .tech-card h4 {
-    font-size: 1.1rem;
-  }
-
-  .info-card p,
-  .tech-card p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  .tech-card ul {
-    font-size: 15px;
-  }
-}
-
-
-/* === Tablet Specific Fix (728px to 1024px): Stack intro cards in one column === */
-@media (min-width: 728px) and (max-width: 1024px) {
-  .intro-row {
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
-  .intro-image-wrapper,
-  .card-grid {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .info-card {
-    text-align: justify;
+  .embedded-text ul {
+    text-align: left;
+    display: inline-block;
   }
 }

@@ -1,35 +1,26 @@
-/* General Wrapper */
-.home-wrapper {
-  background-color: #f2f6fc;
-  color: #111;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* === Video Section === */
+/* === Desktop & Tablet Default === */
 .video-section {
   position: relative;
-  height: 90vh;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
   overflow: hidden;
 }
 
 .responsive-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Fill the screen */
 }
 
-/* Dark Gradient Overlay */
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-/* Centered Content */
 .video-content {
   position: absolute;
   top: 50%;
@@ -37,49 +28,51 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  z-index: 2;
-  animation: fadeInUp 1.5s ease;
+  padding: 1rem;
 }
 
 .video-content h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 4rem);
 }
 
 .video-content p {
-  font-size: 1.2rem;
-  font-weight: 300;
-  max-width: 700px;
-  margin: auto;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-/* Animation */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translate(-50%, -40%); }
-  100% { opacity: 1; transform: translate(-50%, -50%); }
-}
-
-/* === Content Section === */
-.home-section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.home-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.home-section p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 1.1rem;
-  color: #444;
-}
-
-/* Responsive */
+/* === Mobile: Keep full video frame without stretching === */
 @media (max-width: 768px) {
-  .video-content h1 { font-size: 2rem; }
-  .video-content p { font-size: 1rem; padding: 0 1rem; }
+  .video-section {
+    height: auto; /* Let video height define it */
+    overflow: hidden;
+  }
+
+  .responsive-video {
+    object-fit: contain; /* Show full video without crop */
+    width: 100%;
+    height: auto;
+    background-color: black; /* Avoid white gaps */
+    display: block;
+  }
+
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3); /* Keep light overlay for readability */
+  }
+
+  .video-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+  }
+
+  .video-content h1 {
+    font-size: .4rem;
+  }
+
+  .video-content p {
+    font-size: .6rem;
+  }
 }

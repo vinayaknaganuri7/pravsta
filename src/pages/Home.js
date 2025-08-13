@@ -1,21 +1,12 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Footer from '../components/Footer';
-import './Home.css';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import "./Home.css";
 
-<<<<<<< HEAD
-// Images
-import introImage from '../components/pages/images/Intr2.jpeg';
-import visionImage from '../components/pages/images/car.jpg';
-import commitment from '../components/pages/images/commit.jpeg';
-import iotImage from '../components/pages/images/iot.jpg';
-import cockpitVideo from '../components/pages/images/carvi.mp4';
-=======
 // Images & Videos
 import iotImage from '../components/pages/images/iot.jpg';
 import cockpitVideo from '../components/pages/images/Int.jpg';
->>>>>>> 04cd09e (video)
 import dataToolsImage from '../components/pages/images/datasci.jpeg';
 import sapImage from '../components/pages/images/sap.jpg';
 import embeddedImage from '../components/pages/images/embedded.jpeg';
@@ -26,15 +17,23 @@ const Home = () => {
       <Navbar />
       <Hero />
 
-      {/* === Embedded Systems & IoT Solutions Section === */}
+      {/* === Embedded Systems & IoT Solutions === */}
       <section className="embedded-section">
         <div className="embedded-content">
-          <div className="embedded-text">
+          <div className="embedded-text fade-in">
             <h2>Embedded Systems & IoT Solutions</h2>
             <p>
-              At <strong>PRAVSTA TECHNOLOGY PRIVATE LIMITED</strong>, we design and deliver
-              high-performance embedded systems for automotive, medical, and industrial applications.
-              Our engineering team blends hardware, software, and connectivity to create innovative, reliable solutions.
+              <strong>PRAVSTA</strong> is an engineering Solution Provider specializing in
+              Automotive Embedded Engineering, IT Solutions, and Product-Based
+              Services. With a strong focus on innovation, reliability, and
+              customer-centric solutions, we empower our customers to achieve
+              technological excellence and business transformation.
+              <br /><br />
+              We are committed to delivering cutting-edge solutions that empower
+              businesses with advanced technology and strategic expertise.
+              Our team serves the global Automotive, IT, and Medical Embedded
+              industries, collaborating with OEMs, Tier 1 suppliers, and technology
+              leaders to drive innovation, efficiency, and engineering excellence.
             </p>
             <ul>
               <li>✔ Real-time embedded software development</li>
@@ -42,29 +41,8 @@ const Home = () => {
               <li>✔ IoT device connectivity & cloud integration</li>
               <li>✔ Safety-critical & secure firmware solutions</li>
             </ul>
+            <button className="learn-more-btn">Learn More</button>
           </div>
-<<<<<<< HEAD
-
-          {/* Vision Card */}
-          <div className="tech-card animate-3d">
-            <img src={visionImage} alt="Vision" className="tech-img" />
-            <h4>Our Vision</h4>
-            <p className="justified">
-              To become a globally trusted technology leader, driving industry transformation through intelligent engineering and next-generation digital solutions.
-            </p>
-            <p className="justified">
-              Guided by integrity and a commitment to excellence, we empower organizations to innovate boldly and thrive in a rapidly evolving digital world.
-            </p>
-          </div>
-
-          {/* Commitment Card */}
-          <div className="tech-card animate-3d">
-            <img src={commitment} alt="Commitment" className="tech-img" />
-            <h4>Our Commitment</h4>
-            <p className="justified">
-              We are dedicated to delivering measurable value through cutting-edge innovation, uncompromising quality, and trusted partnerships — accelerating digital transformation and driving engineering excellence across every project.
-            </p>
-=======
           <div className="embedded-image">
             <img src={embeddedImage} alt="Embedded Systems" />
 >>>>>>> 04cd09e (video)
@@ -72,9 +50,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* === Core Technology Expertise Section === */}
-      <section className="home-section fade-in">
-        <h3 className="home-header">Our Core Technology Expertise</h3>
+      {/* === Core Technology Expertise === */}
+      <section className="home-section tech-section">
+        <h3 className="home-header fade-in">Our Core Technology Expertise</h3>
         <div className="tech-grid">
           <div className="tech-card animate-3d">
             <img src={iotImage} alt="IoT & Connectivity" className="tech-img" />
@@ -88,23 +66,6 @@ const Home = () => {
             </ul>
           </div>
 
-<<<<<<< HEAD
-         <div className="tech-card animate-3d">
-              <video className="tech-img" autoPlay loop muted playsInline>
-                <source src={cockpitVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <h4>SDV & Connected Cockpit</h4>
-              <ul>
-                <li>Digital Instrument Cluster Development</li>
-                <li>IVI (In-Vehicle Infotainment) Systems</li>
-                <li>Telematics & Connectivity Modules</li>
-                <li>Over-the-Air (FOTA/SOTA) Solutions</li>
-                <li>ECU Software Development & Validation</li>
-              </ul>
-            </div>
-
-=======
           <div className="tech-card animate-3d">
             <img src={cockpitVideo} alt="SDV & Connected Cockpit" className="tech-img" />
             <h4>SDV & Connected Cockpit</h4>
@@ -116,11 +77,10 @@ const Home = () => {
               <li>ECU Software Development & Validation</li>
             </ul>
           </div>
->>>>>>> 04cd09e (video)
 
           <div className="tech-card animate-3d">
             <img src={dataToolsImage} alt="Data Science Tools" className="tech-img" />
-            <h3>Data Science and engineering</h3>
+            <h4>Data Science & Engineering</h4>
             <ul>
               <li>Data Pipeline & Visualization Solutions</li>
               <li>AI/ML Model Development & Training</li>
