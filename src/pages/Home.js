@@ -45,7 +45,6 @@ const Home = () => {
           </div>
           <div className="embedded-image">
             <img src={embeddedImage} alt="Embedded Systems" />
->>>>>>> 04cd09e (video)
           </div>
         </div>
       </section>
