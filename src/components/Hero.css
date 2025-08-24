@@ -1,78 +1,108 @@
-/* === Desktop & Tablet Default === */
-.video-section {
+.hero-slider {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   overflow: hidden;
 }
 
-.responsive-video {
+.slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Fill the screen */
+  transition: all 1s ease-in-out;
+  opacity: 0;
 }
 
-.video-overlay {
+.slide.active {
+  left: 0;
+  opacity: 1;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
 }
 
-.video-content {
+.content {
   position: absolute;
   top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 600px;
+  animation: fadeIn 1.2s ease;
+}
+
+.content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: 2px solid #ff3d57;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff3d57;
+  color: #fff;
+}
+
+/* Dots Navigation */
+.dots {
+  position: absolute;
+  bottom: 20px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  padding: 1rem;
+  transform: translateX(-50%);
 }
 
-.video-content h1 {
-  font-size: clamp(2rem, 4vw, 4rem);
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.video-content p {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+.dot.active {
+  background-color: #ff3d57;
 }
 
-/* === Mobile: Keep full video frame without stretching === */
-@media (max-width: 768px) {
-  .video-section {
-    height: auto; /* Let video height define it */
-    overflow: hidden;
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .responsive-video {
-    object-fit: contain; /* Show full video without crop */
-    width: 100%;
-    height: auto;
-    background-color: black; /* Avoid white gaps */
-    display: block;
-  }
-
-  .video-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* Keep light overlay for readability */
-  }
-
-  .video-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
-  }
-
-  .video-content h1 {
-    font-size: .4rem;
-  }
-
-  .video-content p {
-    font-size: .6rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

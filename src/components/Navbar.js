@@ -35,33 +35,45 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
+      {/* === Left side logo + company === */}
       <div className="navbar-left">
         <Link to="/" className="logo-link">
           <img src={logo} alt="Company Logo" className="logo-image" />
-          <span className="company-name">PRAVSTA TECHNOLOGY PRIVATE LIMITED</span>
+          <span className="company-name">
+            PRAVSTA TECHNOLOGY PRIVATE LIMITED
+          </span>
         </Link>
-        <div className="menu-button-wrapper" onClick={toggleMenu}>
-          <span className="menu-icon">&#9776;</span>
-        </div>
       </div>
 
-      <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`} ref={menuRef}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
+      {/* === Hamburger for mobile === */}
+      <div className="menu-button-wrapper" onClick={toggleMenu}>
+        <span className="menu-icon">&#9776;</span>
+      </div>
 
+      {/* === Nav Links === */}
+      <ul
+        className={`navbar-links ${isMenuOpen ? 'active' : ''}`}
+        ref={menuRef}
+      >
+        <li><Link to="/" onClick={closeMenus}>Home</Link></li>
+        <li><Link to="/about" onClick={closeMenus}>About</Link></li>
+
+        {/* Dropdown */}
         <li className="services-dropdown" ref={servicesRef}>
-          <span className="dropdown-toggle" onClick={toggleServices}>Industries</span>
+          <span className="dropdown-toggle" onClick={toggleServices}>
+            Industries
+          </span>
           {isServicesOpen && (
             <ul className="dropdown-menu">
               <li><Link to="/services/automotive" onClick={closeMenus}>Automotive</Link></li>
               <li><Link to="/services/embedded" onClick={closeMenus}>Medical</Link></li>
-              <li><Link to="/services/it" onClick={closeMenus}>Industrial machine</Link></li>
+              <li><Link to="/services/it" onClick={closeMenus}>Industrial Machine</Link></li>
               <li><Link to="/services/ai" onClick={closeMenus}>IT</Link></li>
             </ul>
           )}
         </li>
 
-        <li><Link to="/Contact">Contact</Link></li>
+        <li><Link to="/contact" onClick={closeMenus}>Contact</Link></li>
       </ul>
     </nav>
   );
